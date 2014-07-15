@@ -1,0 +1,97 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Ensinador: exemplos de uso</title>
+<style type="text/css">
+<!--/* <![CDATA[ */
+  body { font-family: times; }
+  table { border: solid 1px #000000; width: 100%;} 
+  td.value { background-color: #efefef; padding-left: 5px; padding-right: 5px;}
+  th { font-weight: bold; background-color: #dedede;
+           padding-left: 5px; padding-right: 5px;}
+  #contents { margin: 15px; }
+  .box { margin: 5px; padding: 10px; border: dotted 1px #aaa; }
+  body { margin: 0px; padding: 0px; }
+  form { margin: 10px; }
+  .c { font-weight: bold; }
+  .u { text-decoration: underline; }
+  .m { margin: 5px; }
+  .o { margin: 5px; }
+  .results { margin: 10px; }
+  .m:hover { background-color: #defede; }
+  #header  { margin: 0px; background-color: #dedede; padding: 5px; margin-bottom: 15px;
+             border-bottom: solid 1px #000000; }
+  input[type='text'] { border: solid 1px #777; padding: 2px;}
+  input[type='text']:hover { background-color: #efefef; }
+  input[type='text']:focus { background-color: #efefef; }
+  h2 { text-align: center; }
+
+
+/* ]]> */-->
+</style>
+</head>
+<body>
+<div id="header"><div style="float: right">
+<a href="http://dinis2.linguateca.pt/acesso/ensinador/">Regressar ao Ensinador</a>
+<br/>
+<a target="_top" href="http://www.linguateca.pt/">Linguateca</a>
+</div> <h1>Ensinador: exemplos de uso</h1></div><div id="contents"><br />
+Nesta página tentamos explicar a possíveis utilizadores do Ensinador quais os passos que se utilizam na construçãode exercícios, qual a sintaxe adicional criada para o Ensinador, e fornecer alguns exemplos.
+<h2>Passos a seguir</h2>
+Um professor deverá ter uma ideia do título da página dos exercícios que vai criar, e de como encontrar casos a manipular.
+O título inclui-se na caixa a seguir às palavras "para a secção". O que incluir na caixa de procura
+ (a seguir a "Procurar") é uma expressão que indica que tipo de construções se procuram,
+e que porções o aluno irá ter de repor. Por exemplo e num caso muito simples, poderia procurar "<tt>[lema="bom|mau"].</tt>". Note o ponto no final da expressão, que indica que a palavra encontrada deverá ser removida, para que o aluno a preencha.
+<p>
+Depois de carregar em "Procurar", e de ter escolhido o corpo (por omissão o Ensinador procura no corpo CHAVE), recebe uma lista de concordâncias, onde deverá escolher as frases que mais se adequam ao exercício que está a prearar, e após terminada a escolha, deverá carregar no botão "OK".
+<p>O Ensinador mostra então o resultado - o exercício como está. O utilizador, se não estiver ainda completamente satisfeito, tem várias hipóteses: 
+<ul>
+<li>Simplesmente adicionar um título ao conjunto de exercícios, preenchendo-o em "Adicionar título" e carregando em "OK"
+<li>Continuar a procura noutros corpos (ou no mesmo), carregando no botão "Adicionar" depois de eventualmente ter alterado o valor na persiana relativa ao corpo 
+<li>Fazer outra procura (editando o que está na caixa "Procurar") para adicionar à mesma página, e carregando novamente no botão "Adicionar"
+<li>Fazer outra procura abrindo uma subpágina (ou seja, dando um novo subtítulo), nesse caso preenchendo o caixa a seguir a "para a secção" e fazer outra procura, carregando novamente no botão "Adicionar".
+</ul>
+Pode repetir estes passos as vezes que quiser, mas antes de prosseguir pode sempre aleatorizar a ordem por que a lista dos exercícios é mostrada, carregando no botão "Aleatorizar". Pode aleatorizar as vezes que quiser, é sempre o resultado anterior que é novamente baralhado.
+<p>Uma nova secção é sempre incluída a seguir às antigas.
+<p>Quando estiver satisfeito com a quantidade de exercícios, e a ordem por que aparecem, pode depois ver o enunciado e a solução, através dos botões "enunciado" e "solução" a seguir a "Descarregar:". 
+<p>Nota: Se ainda quiser editar os exercícios ou as soluções, faça, no seu navegador, na janela ("frame") respetiva, "Ver fonte" e guarde o resultado como texto.
+<h2>Sintaxe especial do Ensinador</h2>
+Muitas vezes não é possível adivinhar completamente a palavra retirada, ou o objetivo não é esse, mas sim a sua conjugação ou flexão num determinado tempo ou pessoa. Por isso é muitas vezes necessário adicionar automaticamente, ao enunciado do exercício, mais informação sobre as palavras ou expressões retiradas.
+<p>Tal faz-se colocando o nome do atributo posicional em questão no fim da expressão de procura em causa, a seguir a um ponto, ".". Por exemplo se quisemos saber qual o lema, juntamos <tt>.lema</tt>. Se quisermos o lema e a pessoa, juntamos <tt>.lema.pessnum</tt>. Repare-se que é preciso saber o nome dos atributos posicionais de cada corpo. 
+<p>O valor dos atributos posicionais aparece, no enunciado, separado por espaços, se pedirmos mais do que um.
+<p>Note-se que é possível, e comum, que queiramos especificar diferentes atributos para diferentes partes de uma expressão de pesquisa. Isso faz-se da mesma forma, associando a cada caso o seu ou seus atributos, que aparecem então separados por vírgulas no enunciado.
+<p>Finalmente, se quisermos usar algo na expressão de pesquisa que se mantenha à vista, basta colocar ~ a seguir a esse atributo, e não aparecerá um buraco para preencher no seu lugar.
+
+<h2>Exemplos</h2>
+Aqui mostramos alguns exemplos de exercícios e sua resolução criados com o Ensinador:
+<ol>
+<li>Escolha entre o pretérito perfeito composto e o mais que perfeito do indicativo: usámos a seguinte expressão de pesquisa <tt> [lema="ter"]. [pos="V.*"].lema </tt> <a href="ExercPPC.html">Enunciado</a>, <a href="FrasesPPC.html">Frases originais</a>
+<li>Dois exercícios sobre a especificação do tempo em português, no mesmo enunciado: o primeiro obtido com a expressão de pesquisa <tt> [lema="desde|até"]. </tt> e o segundo com <tt> [lema="quando|enquanto"]. </tt> <a href="ExercTempo.html">Enunciado</a>, <a href="FrasesTempo.html">Frases originais</a>
+<li>Tempo associado a "há": usámos a seguinte expressão de pesquisa <tt> [pos="V.*"].lema [: word="há" :]</tt> <a href="ExercHá.html">Enunciado</a>, <a href="FrasesHá.html">Frases originais</a> 
+<li>Posição dos clíticos com verbos fixos: usámos as seguintes duas expressões de pesquisa em sequência <tt> [pos="V.*(\+.*)" & lema="tratar\+.*"].temcagr.pessnum </tt> e <tt> [pos="PERS.*" & temcagr !="NOM"].pessnum.genero [pos="V.*"]* [pos="V.*" & lema="tratar"].temcagr</tt> <a href="ExercPosicaoPronome.html">Enunciado</a>, <a href="FrasesPosicaoPronome.html">Frases originais</a> (Note-se que foi preciso editar e alterar os nomes dos clíticos e dos tempos.)
+<li>Posição dos clíticos em geral: poderíamos usar as seguintes duas expressões de pesquisa em sequência <tt> [pos="V.*(\+.*)"].lema.temcagr.pessnum </tt> e <tt> [pos="PERS.*" & temcagr !="NOM"].pessnum.gen [pos="V.*"].lema.temcagr</tt>  mas ter-se-ia de normalizar a descrição dos clíticos e dos tempos para não ser óbvia a ordem...</li>
+<li>É possível definir o contexto esquerdo/direito até um máximo de duas frases, de modo a obter informação extra que ajude na resolução do exercício.</li>
+<li>É possível editar o título de uma secção, basta para isso clicar no nome, e alterá-lo.</li>
+<li>É possível especificar algo na expressão de procura que não seja transformado em "buraco", através do use de um til associado a esse(s) elemento(s). Por exemplo, <tt>[word="quando|se"]~ [pos!="V.*"]~ [temcagr=".*SUBJ"].lema </tt>, não retira as duas primeiras palavras.
+<li>É possível usar o comando <t>within X</t> ou <t>within N X</t> para indicar o âmbito do *. Por exemplo <tt>[lema="tanto"] []* [lema="como|quanto"] within s</tt> implica que não pode passar a barreira de uma frase (s).
+</ol>
+<h2>Melhorias a fazer no futuro</h2>
+A seguinte lista está desorganizada, são apenas coisas de que precisamos mas ainda não conseguimos implementar.
+<ul>
+<li>Dava jeito poder ter um número variável de palavras na expressão, por exemplo <tt>[pos="V.*"]*.lema [word="há"]~ </tt>
+<li>Dava jeito poder indicar a ordem ela qual se queria a informação, para os exercícios em que o objetivo era exatamente o aluno escolher a ordem certa -- por exemplo para a posição dos adjetivos ou dos clíticos, e que de momento tem de ser feito à mão editando o enunciado.
+<li>Dava jeito poder alterar algo que já tinha sido feito, por exemplo retirar alguns exemplos dos que tinham sido obtidos, ou mesmo juntar duas secções. Claro está que isso se faz facilmente editando o HTML, mas nesse caso tem de se fazer em duplicado...
+</ul>
+Também poderíamos incluir diretamente no Ensinador o pós-processador que usamos por agora sobre os ficheiros de resultados e de exercícios, e que trata de traduzir os códigos dos tempos e dos clíticos, etc.
+<hr>
+Última mudança: 21 de agosto de 2013.
+<address>
+
+<a href="http://www.linguateca.pt/cgi-bin/correio/FormularioCorreio.pl?pagina=dinis2//html/acesso/ensinador/ensinador_exemplos.html&servico=Ensinador">Coment&aacute;rios, sugest&otilde;es e perguntas sobre o Ensinador</a>
+</address>
+
+
+</body>
+</html>

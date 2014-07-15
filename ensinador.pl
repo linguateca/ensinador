@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/opt/perl-5.20.0/bin/perl 
 # use strict;
 # use warnings;
 use CWB::CQP;
@@ -10,7 +10,7 @@ use File::Slurp qw/slurp/;
 use PHP::Include;
 use URI::Escape;
 use JSON;
-our $JQUERY = '/acesso/ensinador/jquery.js';
+our $JQUERY = '/Ensinador/jquery.js';
 our $DEBUG = 0;
 our $LOGFILE = 'ensinador.log';
 
@@ -61,7 +61,7 @@ if (param("gonetoselection") || param("addtitle") ||
     print '<div id="contents">';
     print formulario("Procurar");
     print p({-style=>"width: 60%; margin-left: auto; margin-right: auto; clear: both"},
-            "O Ensinador é um sistema de criação de exercícios gramaticais sobre os corpos AC/DC, descrito em ",a({-href=>"http://www.linguateca.pt/documentos/index.html#1307718928"},"Simões &amp; Santos (2011)"), ". Veja alguns exemplos de comandos e de exercícios ", a({-href=>"http://193.136.2.103/acesso/ensinador/ensinador_exemplos.html"}, "nesta página"), ".");
+            "O Ensinador é um sistema de criação de exercícios gramaticais sobre os corpos AC/DC, descrito em ",a({-href=>"http://www.linguateca.pt/documentos/index.html#1307718928"},"Simões &amp; Santos (2011)"), ". Veja alguns exemplos de comandos e de exercícios ", a({-href=>"http://www.linguateca.pt/acesso/ensinador/ensinador_exemplos.html"}, "nesta página"), ".");
 }
 
 print <<EOH;
@@ -728,7 +728,7 @@ sub JS {
         }});
 
      $('#corpus').change( function() {
-         var url = "/acesso/sobre/index.pl/" + $('#corpus').val();
+         var url = "/Ensinador/sobre/index.pl/" + $('#corpus').val();
          $('#info').load(url);
      } );
 
@@ -760,7 +760,7 @@ sub formulario {
                Tr(td("Corpo"),
                   td({-colspan=>"2"}, popup_menu(-name    => 'corpus',
                                                  -id      => 'corpus',
-                                                 -values  => [keys %corpora],
+                                                 -values  => [sort keys %corpora],
                                                  -default => 'CHAVE' ))),
                Tr(td({-rowspan=>2},"Contexto"),
                   td("&nbsp;esquerdo"),
