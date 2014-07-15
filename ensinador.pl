@@ -10,7 +10,7 @@ use File::Slurp qw/slurp/;
 use PHP::Include;
 use URI::Escape;
 use JSON;
-our $JQUERY = '/Ensinador/jquery.js';
+our $JQUERY = '/ensinador/jquery.js';
 our $DEBUG = 0;
 our $LOGFILE = 'ensinador.log';
 
