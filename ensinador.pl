@@ -61,7 +61,9 @@ if (param("gonetoselection") || param("addtitle") ||
     print '<div id="contents">';
     print formulario("Procurar");
     print p({-style=>"width: 60%; margin-left: auto; margin-right: auto; clear: both"},
-            "O Ensinador é um sistema de criação de exercícios gramaticais sobre os corpos AC/DC, descrito em ",a({-href=>"http://www.linguateca.pt/documentos/index.html#1307718928"},"Simões &amp; Santos (2011)"), ". Veja alguns exemplos de comandos e de exercícios ", a({-href=>"http://www.linguateca.pt/acesso/ensinador/ensinador_exemplos.html"}, "nesta página"), ".");
+            "O Ensinador é um sistema de criação de exercícios gramaticais sobre os corpos AC/DC, descrito em ",
+            a({-href=>"http://www.linguateca.pt/documentos/index.html#1307718928"},
+        	"Simões &amp; Santos (2011)"), ". Veja alguns exemplos de comandos e de exercícios ", a({-href=>"http://www.linguateca.pt/ensinador/ensinador_exemplos.html"}, "nesta página"), ".");
 }
 
 print <<EOH;
@@ -780,7 +782,7 @@ sub my_header {
             br,
             a({-href=>"http://www.linguateca.pt/ACDC/", -target=>"_top"}, 'AC/DC'),
             br,
-            a({-href=>"/acesso/ensinador/" }, "Reiniciar Ensinador"),
+            a({-href=>"/ensinador/" }, "Reiniciar Ensinador"),
            ),
         h1('Ensinador'));
 }
