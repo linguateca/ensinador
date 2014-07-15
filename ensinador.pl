@@ -775,8 +775,10 @@ sub formulario {
 
 sub my_header {
     div({-id => 'header' },
-        div({-style => "float: right"},
+        div({-style => "float: right; text-align: right;"},
             a({-href=>"http://www.linguateca.pt/", -target=>"_top"}, 'Linguateca'),
+            br,
+            a({-href=>"http://www.linguateca.pt/ACDC/", -target=>"_top"}, 'AC/DC'),
             br,
             a({-href=>"/acesso/ensinador/" }, "Reiniciar Ensinador"),
            ),
