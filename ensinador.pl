@@ -728,7 +728,7 @@ sub JS {
         }});
 
      $('#corpus').change( function() {
-         var url = "/Ensinador/sobre/index.pl/" + $('#corpus').val();
+         var url = "/ensinador/sobre/index.pl/" + $('#corpus').val();
          $('#info').load(url);
      } );
 
