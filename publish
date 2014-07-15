@@ -1,0 +1,3 @@
+#!/bin/sh
+
+rsync -aSPvz . linguateca:Ensinador/ --exclude=.git
