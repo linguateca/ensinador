@@ -48,7 +48,7 @@ if (param("gonetoselection") || param("addtitle") ||
 
     print header;
     print start_html( -title => "Ensinador",
-                      -style => { -code => css() },
+                      -style  => { 'src'=>'ensinador.css'},                      
                       -script => [
                                   { -language => 'JavaScript',
                                     -src => $JQUERY },
@@ -104,8 +104,8 @@ sub show_selection {
     }
 
     print start_html( -title => "Ensinador",
-                      -style => { -code => css() },
-                      -script => [
+                      -style  => { 'src'=>'ensinador.css'},                      
+                                            -script => [
                                   { -language => 'JavaScript',
                                     -src => $JQUERY },
                                   { -language => 'JavaScript',
@@ -268,7 +268,7 @@ sub concordancias {
     my $saved           = param('saved')                     || '{}';
 
     print start_html( -title => "Ensinador",
-                      -style => { -code => css() });
+                              -style  => { 'src'=>'ensinador.css'});
 
     my $CQP = my_cqp($selected_corpus, $iddoc, $uni_basica, \@context);
     my $attr = attributes($CQP, $selected_corpus, hash_form => 1);
@@ -666,30 +666,6 @@ sub attributes {
     return $attributes;
 }
 
-
-sub css {
-    return <<EOCSS
-  body { font-family: times; }
-  #contents { margin: 20px; }
-  .box { margin: 5px; padding: 10px; border: dotted 1px #aaa; }
-  body { margin: 0px; padding: 0px; }
-  form { margin: 10px; }
-  .c { font-weight: bold; }
-  .u { text-decoration: underline; }
-  .m { margin: 5px; }
-  .o { margin: 5px; }
-  .results { margin: 10px; }
-  .m:hover { background-color: #defede; }
-  #header  { margin: 0px; background-color: #dedede; padding: 5px; margin-bottom: 15px;
-             border-bottom: solid 1px #000000; }
-  input[type='text'][readonly] { width: auto; border: none; font-size: 15pt; font-weight: bold; }
-  input[type='text'] { border: solid 1px #777; padding: 2px;}
-  input[type='text']:hover { background-color: #efefef; }
-  input[type='text']:focus { background-color: #efefef; }
-  h2 { text-align: center; }
-EOCSS
-}
-
 sub JS {
     return << 'EOJS';
   function edit(element) {
@@ -776,12 +752,9 @@ sub formulario {
 }
 
 sub my_header {
-    div({-id => 'header' },
-        div({-style => "float: right; text-align: right;"},
-            a({-href=>"http://www.linguateca.pt/", -target=>"_top"}, 'Linguateca'),
-            br,
+    div({-id => 'linguateca' },
+        div(a({-href=>"http://www.linguateca.pt/",      -target=>"_top"}, 'Linguateca'),
             a({-href=>"http://www.linguateca.pt/ACDC/", -target=>"_top"}, 'AC/DC'),
-            br,
             a({-href=>"/ensinador/" }, "Reiniciar Ensinador"),
            ),
         h1('Ensinador'));

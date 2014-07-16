@@ -1,0 +1,57 @@
+
+
+html, body {
+  margin: 0px;
+  padding: 0px; 
+}
+
+#linguateca {
+	margin: 0px;
+	padding: 0px;
+	height: 80px;
+	background-color: #2D72D7;
+	border-bottom: solid 2px rgb(37, 94, 175);
+}
+
+#linguateca div {
+	float: right;
+	padding-right: 20px;
+	text-align: right;
+}
+
+#linguateca div a:hover {
+	text-decoration: underline;
+}
+#linguateca div a {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	display: block;
+	text-decoration: none;
+	color: #ffffff;
+}
+
+#linguateca h1 {
+	color: #FFFFFF;
+	font-weight: bold;
+	margin: 0px;
+	padding-left: 20px;
+	padding-top: 20px;
+}
+
+/* -------------------------------------- */
+
+  #contents { margin: 20px; }
+  .box { margin: 5px; padding: 10px; border: dotted 1px #aaa; }
+  body { margin: 0px; padding: 0px; }
+  form { margin: 10px; }
+  .c { font-weight: bold; }
+  .u { text-decoration: underline; }
+  .m { margin: 5px; }
+  .o { margin: 5px; }
+  .results { margin: 10px; }
+  .m:hover { background-color: #defede; }
+  input[type='text'][readonly] { width: auto; border: none; font-size: 15pt; font-weight: bold; }
+  input[type='text'] { border: solid 1px #777; padding: 2px;}
+  input[type='text']:hover { background-color: #efefef; }
+  input[type='text']:focus { background-color: #efefef; }
+  h2 { text-align: center; }
