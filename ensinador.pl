@@ -1,4 +1,4 @@
-#!/opt/perl-5.20.0/bin/perl 
+#!/opt/perl-5.20.0/bin/perl
 # use strict;
 # use warnings;
 use CWB::CQP;
@@ -104,7 +104,10 @@ sub show_selection {
     }
 
     print start_html( -title => "Ensinador",
-                      -style  => { 'src'=>'ensinador.css'},                      
+                      -style  => {
+                                  '-src'=>'ensinador.css',
+                                  '-code' => '  .c { font-weight: bold; } ',
+                                 },                      
                                             -script => [
                                   { -language => 'JavaScript',
                                     -src => $JQUERY },
